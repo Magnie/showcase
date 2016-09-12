@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="Showcase">
+    <head>
+        <meta charset="utf-8">
+        <title>Showcase</title>
+        
+        <!-- Standard CSS Libraries -->
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css" />
+        
+        <!-- Custom CSS Libraries -->
+        <link rel="stylesheet" href="assets/css/bootstrap-override.css" />
+        <link rel="stylesheet" href="assets/css/global.css" />
+        
+        <!-- Standard JS Libraries -->
+        <script src="node_modules/angular/angular.js"></script>
+        <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+        <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+        
+        <!-- Custom JS Libraries -->
+        <script src="assets/app.main.js"></script>
+        <script src="assets/app.config.js"></script>
+        
+    </head>
+    <body>
+        <div class="container">
+            <div ui-view="navigation"></div>
+            <main ui-view="content"></main>
+            <div ui-view="footer"></div>
+        </div>
+        
+        <!-- Components -->
+        <script src="components/navigation/navigationController.js"></script>
+    </body>
+</html>

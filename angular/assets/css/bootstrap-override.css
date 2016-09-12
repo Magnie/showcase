@@ -1,0 +1,22 @@
+.nav-pills > li > a {
+    border-radius: 0;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    background-color: white;
+    color: gray;
+}
+
+.nav-pills > li > a {
+    background-color: black;
+    color: white;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color: #555;
+    color: white;
+}
+
+.nav-pills > li + li {
+    margin-left: 0;
+}
