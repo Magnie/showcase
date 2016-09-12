@@ -9,9 +9,9 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
                 templateUrl: 'components/navigation/navigationView.html',
                 controller: 'navigationController',
             },
-            // 'footer': {
-            //     templateUrl: 'components/home/homeView.html',
-            // },
+            'footer': {
+                templateUrl: 'components/footer/footerView.html',
+            },
         },
     });
     
@@ -22,6 +22,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
                 templateUrl: 'components/home/homeView.html',
             },
         },
+        data: { pageTitle: 'Showcase + Home' }
     });
     
     $stateProvider.state('app.experience', {
@@ -31,6 +32,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
                 templateUrl: 'components/experience/experienceView.html',
             },
         },
+        data: { pageTitle: 'Showcase + Experience' }
     });
     
     $stateProvider.state('app.contact', {
@@ -38,7 +40,9 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
         views: {
             'content@': {
                 templateUrl: 'components/contact/contactView.html',
+                controller: 'contactController',
             },
         },
+        data: { pageTitle: 'Showcase + Contact' }
     });
 }]);

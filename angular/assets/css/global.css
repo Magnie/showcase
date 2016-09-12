@@ -3,6 +3,7 @@ body {
 }
 
 p {
+    /*text-indent: 24px;*/
     font-size: 16px;
     color: #888888;
 }
@@ -11,17 +12,39 @@ p {
     margin-top: 1em;
 }
 
-/* start 'enter' transition on main view */
-main.ng-enter {
+#main {
+    overflow:auto;
+    padding-bottom:150px; /* this needs to be bigger than footer height*/
+}
+
+/* start 'enter' transition on .content view */
+.content.ng-enter {
     /* transition on enter for .5s */
     transition: .6s;
-
+    
     /* start with opacity 0 (invisible) */
     opacity: 0;
 }
 
-/* end 'enter' transition on main view */
-main.ng-enter-active {
+/* end 'enter' transition on .content view */
+.content.ng-enter-active {
     /* end with opacity 1 (fade in) */
     opacity: 1;
 }
+
+
+html, body {
+    height: 100%;
+}
+
+#wrap {
+    min-height: 100%;
+}
+
+.footer {
+    position: relative;
+    margin-top: -150px; /* negative value of footer height */
+    height: 150px;
+    clear:both;
+    padding-top:20px;
+} 

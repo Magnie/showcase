@@ -11,7 +11,7 @@
                         From
                     </div>
                     <div class="col-md-11">
-                        <input ng-model="email_from" class="form-control" type="text" placeholder="What address would you like to be contacted at?">
+                        <input ng-model="email_from" name="email_from" class="form-control" type="email" required placeholder="What address would you like to be contacted at?">
                     </div>
                 </div>
                 <div class="row margin-top">
@@ -19,7 +19,7 @@
                         Name
                     </div>
                     <div class="col-md-11">
-                        <input ng-model="email_name" class="form-control" type="text" placeholder="What is your name?">
+                        <input ng-model="email_name" name="email_name" class="form-control" type="text" required placeholder="What is your name?">
                     </div>
                 </div>
                 <div class="row margin-top">
@@ -27,7 +27,7 @@
                         Title
                     </div>
                     <div class="col-md-11">
-                        <input ng-model="email_title" class="form-control" type="text" placeholder="What is the title of the email?">
+                        <input ng-model="email_subject" name="email_subject" class="form-control" type="text" required placeholder="What is the subject of the email?">
                     </div>
                 </div>
                 <div class="row margin-top">
@@ -35,7 +35,12 @@
                         Body
                     </div>
                     <div class="col-md-11">
-                        <textarea ng-model="email_body" class="form-control" rows="8" cols="40" placeholder="What would you like to say?"></textarea>
+                        <textarea ng-model="email_body" name="email_body" class="form-control" rows="8" cols="40" required placeholder="What would you like to say?"></textarea>
+                    </div>
+                </div>
+                <div class="row margin-top">
+                    <div class="col-md-12">
+                        <button ng-click="send_email()" ng-disabled="contact_form.$invalid" class="btn btn-success pull-right" type="button">Send</button>
                     </div>
                 </div>
             </form>
