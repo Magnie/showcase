@@ -1,10 +1,10 @@
 import json
 config_name = 'config.json'
 
-def enter_option(title, default=''):
+def enter_option(title, default='', allowed=[]):
     "To simplify setting an option with an already provided value."
     if default:
-        message = '{0} ({1}): '.format(title, default)
+        message = '{0} [{1}]: '.format(title, default)
     else:
         message = '{0}: '.format(title)
     
@@ -13,6 +13,9 @@ def enter_option(title, default=''):
         option = raw_input(message)
         if default and not option:
             return default
+        
+        if allowed and (option not in allowed):
+            option = None
     
     return option
 
@@ -28,6 +31,7 @@ def main():
         config = {}
     
     config['admin_email'] = enter_option('Email', config.get('admin_email', ''))
+    config['debug_mode'] = enter_option('Debug Mode (y)es (n)o', config.get('debug_mode', 'n'), ['y', 'n'])
     
     saved = False
     

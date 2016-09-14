@@ -1,12 +1,12 @@
 app.factory('call_api', ['$http', function ($http) {
     return function(config) {
-        var domain = 'http://localhost:8081';
+        var path = '/api';
         var method = 'GET';
         
         if (config['data']) {
-            var request = $http.post(domain + config['url'], angular.toJson(config['data']));
+            var request = $http.post(path + config['url'], angular.toJson(config['data']));
         } else {
-            var request = $http.get(domain + config['url']);
+            var request = $http.get(path + config['url']);
         }
         
         request.then(

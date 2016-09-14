@@ -3,18 +3,21 @@
 }
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
-    background-color: white;
+    background-color: transparent;;
     color: gray;
+    text-shadow:0px 0px 1px gray;
 }
 
 .nav-pills > li > a {
-    background-color: black;
-    color: white;
+    background-color: transparent;;
+    color: gray;
+    font-weight: normal;
 }
 
 .nav > li > a:hover, .nav > li > a:focus {
-    background-color: #555;
-    color: white;
+    background-color: transparent;;
+    color: gray;
+    text-shadow:0px 0px 1px gray;
 }
 
 .nav-pills > li + li {

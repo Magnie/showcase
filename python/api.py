@@ -1,7 +1,5 @@
-from bottle import request, response
-from bottle import route
+from bottle import Bottle, request, response, route
 import bottle
-import json
 import sys
 
 # Import smtplib for the actual sending function
@@ -17,6 +15,10 @@ from email.mime.text import MIMEText
 # db_name = 'showcase'
 # database = client[db_name]
 
+from config import config
+
+app = Bottle()
+
 def enable_cors(fn):
     def _enable_cors(*args, **kwargs):
         # set CORS headers
@@ -30,19 +32,8 @@ def enable_cors(fn):
 
     return _enable_cors
 
-config_name = 'config.json'
-try:
-    print 'Trying to load config.json...'
-    config_file = open(config_name, 'r')
-    config = json.loads(config_file.read())
-    config_file.close()
-    print 'config.json loaded!'
-except IOError:
-    print 'config.json not found. Stopping..'
-    sys.exit()
-
 # Send Email via Contact Page
-@route('/send/email', method=['OPTIONS', 'POST'])
+@app.route('/api/send/email', method=['OPTIONS', 'POST'])
 @enable_cors
 def send_email():
     data = request.json
